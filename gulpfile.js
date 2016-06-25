@@ -7,12 +7,12 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css');
 
 gulp.task('sass', function(){
-    return gulp.src('scss/build.scss')
-        .pipe(maps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(insert.wrap('<style>', '</style></head>'))
-        .pipe(maps.write('./'))
-        .pipe(gulp.dest('css'));
+  return gulp.src('scss/build.scss')
+    .pipe(maps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(insert.wrap('<style>', '</style></head>'))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('css'));
 });
